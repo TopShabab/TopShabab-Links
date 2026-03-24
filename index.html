@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Top Shabab | Crypto Trader</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(135deg, #0a0f1a 0%, #0a0c15 100%);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 24px 16px;
+        }
+
+        .container {
+            max-width: 520px;
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        .card {
+            background: rgba(18, 24, 36, 0.9);
+            backdrop-filter: blur(10px);
+            border-radius: 40px;
+            padding: 32px 24px;
+            box-shadow: 0 25px 45px -12px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .profile {
+            text-align: center;
+            margin-bottom: 28px;
+        }
+
+        .avatar {
+            width: 96px;
+            height: 96px;
+            background: linear-gradient(135deg, #f7931a, #ffb347);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 16px;
+            font-size: 48px;
+            font-weight: bold;
+            color: white;
+            box-shadow: 0 8px 20px rgba(247, 147, 26, 0.3);
+        }
+
+        h1 {
+            font-size: 26px;
+            font-weight: 700;
+            color: white;
+            letter-spacing: -0.3px;
+            margin-bottom: 6px;
+        }
+
+        .handle {
+            color: #f7931a;
+            font-size: 15px;
+            font-weight: 500;
+            margin-bottom: 12px;
+            display: inline-block;
+        }
+
+        .bio {
+            color: #9ca3af;
+            font-size: 15px;
+            line-height: 1.5;
+            max-width: 320px;
+            margin: 0 auto;
+        }
+
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 28px;
+            margin-top: 20px;
+            padding-top: 16px;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            color: white;
+            font-size: 20px;
+            font-weight: 700;
+        }
+
+        .stat-label {
+            color: #6b7280;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .links {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            margin-bottom: 28px;
+        }
+
+        .btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            padding: 16px 20px;
+            border-radius: 60px;
+            font-weight: 600;
+            font-size: 16px;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #f7931a, #e67e22);
+            color: white;
+            box-shadow: 0 4px 12px rgba(247, 147, 26, 0.25);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(247, 147, 26, 0.35);
+            background: linear-gradient(135deg, #ffa31a, #f7931a);
+        }
+
+        .btn-discord {
+            background: rgba(88, 101, 242, 0.15);
+            color: #8b9aff;
+            border-color: rgba(88, 101, 242, 0.3);
+        }
+
+        .btn-discord:hover {
+            background: rgba(88, 101, 242, 0.25);
+            transform: translateY(-2px);
+            color: #a5b3ff;
+        }
+
+        .btn-twitter {
+            background: rgba(29, 155, 240, 0.15);
+            color: #60a5fa;
+            border-color: rgba(29, 155, 240, 0.3);
+        }
+
+        .btn-twitter:hover {
+            background: rgba(29, 155, 240, 0.25);
+            transform: translateY(-2px);
+            color: #7ab7ff;
+        }
+
+        .btn-outline {
+            background: rgba(255, 255, 255, 0.05);
+            color: #e5e7eb;
+        }
+
+        .btn-outline:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .email-section {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 28px;
+            padding: 20px;
+            margin-top: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .email-title {
+            color: white;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 6px;
+            text-align: center;
+        }
+
+        .email-sub {
+            color: #6b7280;
+            font-size: 12px;
+            text-align: center;
+            margin-bottom: 16px;
+        }
+
+        .email-form {
+            display: flex;
+            gap: 10px;
+        }
+
+        .email-form input {
+            flex: 1;
+            padding: 14px 16px;
+            border-radius: 60px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            background: rgba(0, 0, 0, 0.3);
+            color: white;
+            font-size: 14px;
+            outline: none;
+            transition: border 0.2s;
+        }
+
+        .email-form input:focus {
+            border-color: #f7931a;
+        }
+
+        .email-form input::placeholder {
+            color: #4b5563;
+        }
+
+        .email-form button {
+            padding: 14px 24px;
+            border-radius: 60px;
+            border: none;
+            background: #f7931a;
+            color: white;
+            font-weight: 600;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .email-form button:hover {
+            background: #e67e22;
+            transform: scale(0.98);
+        }
+
+        .success-message {
+            text-align: center;
+            color: #10b981;
+            font-size: 13px;
+            margin-top: 12px;
+            display: none;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 24px;
+            font-size: 12px;
+            color: #4b5563;
+        }
+
+        @media (max-width: 480px) {
+            .card {
+                padding: 24px 20px;
+            }
+            .btn {
+                padding: 14px 16px;
+                font-size: 14px;
+            }
+            .avatar {
+                width: 80px;
+                height: 80px;
+                font-size: 40px;
+            }
+            .email-form {
+                flex-direction: column;
+            }
+            .email-form button {
+                padding: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="profile">
+                <div class="avatar">🔥</div>
+                <h1>Top Shabab</h1>
+                <div class="handle">@TopShababx</div>
+                <div class="bio">
+                    Crypto trader sharing daily setups & alpha. 
+                    BingX partner. 1400+ traders following.
+                </div>
+                <div class="stats">
+                    <div class="stat">
+                        <div class="stat-number">1.4K+</div>
+                        <div class="stat-label">Followers</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">🚀</div>
+                        <div class="stat-label">Daily Setups</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">🔗</div>
+                        <div class="stat-label">BingX Partner</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="links">
+                <a href="https://bingx.com/partner/TopShababx" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+                    🔥 Trade on BingX
+                    <span>→</span>
+                </a>
+                <a href="https://discord.gg/Rjj8pkgt2" class="btn btn-discord" target="_blank" rel="noopener noreferrer">
+                    💬 Join Discord Community
+                    <span>→</span>
+                </a>
+                <a href="https://twitter.com/TopShababx" class="btn btn-twitter" target="_blank" rel="noopener noreferrer">
+                    🐦 Follow on X (Twitter)
+                    <span>→</span>
+                </a>
+                <a href="#" class="btn btn-outline" id="signalsBtn">
+                    📊 Free Trade Signals
+                    <span>→</span>
+                </a>
+            </div>
+
+            <div class="email-section">
+                <div class="email-title">📧 Get Free Trade Setup Guide</div>
+                <div class="email-sub">Join 500+ traders. No spam, just setups.</div>
+                <form class="email-form" id="emailForm">
+                    <input type="email" id="emailInput" placeholder="Enter your email" required>
+                    <button type="submit">Send Guide →</button>
+                </form>
+                <div class="success-message" id="successMessage">
+                    ✓ Guide sent! Check your inbox.
+                </div>
+            </div>
+
+            <div class="footer">
+                🔥 Daily crypto setups | BingX partner | Real alpha
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const emailForm = document.getElementById('emailForm');
+        const emailInput = document.getElementById('emailInput');
+        const successMessage = document.getElementById('successMessage');
+
+        emailForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const email = emailInput.value.trim();
+            
+            if (!email || !email.includes('@')) {
+                alert('Please enter a valid email address');
+                return;
+            }
+
+            console.log('Email captured:', email);
+            
+            successMessage.style.display = 'block';
+            emailInput.value = '';
+            
+            setTimeout(() => {
+                successMessage.style.display = 'none';
+            }, 3000);
+        });
+
+        document.getElementById('signalsBtn').addEventListener('click', (e) => {
+            e.preventDefault();
+            document.querySelector('.email-section').scrollIntoView({ behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html>
