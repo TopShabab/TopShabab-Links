@@ -12,7 +12,7 @@
         }
 
         body {
-            background: linear-gradient(135deg, #0a0f1a 0%, #0a0c15 100%);
+            background: #000000;
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
             min-height: 100vh;
             display: flex;
@@ -28,12 +28,11 @@
         }
 
         .card {
-            background: rgba(18, 24, 36, 0.9);
-            backdrop-filter: blur(10px);
+            background: #0a0a0a;
             border-radius: 40px;
             padding: 32px 24px;
-            box-shadow: 0 25px 45px -12px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 25px 45px -12px rgba(0, 0, 0, 0.8), 0 0 0 1px rgba(0, 102, 255, 0.2);
+            border: 1px solid rgba(0, 102, 255, 0.3);
         }
 
         .profile {
@@ -44,16 +43,21 @@
         .avatar {
             width: 96px;
             height: 96px;
-            background: linear-gradient(135deg, #f7931a, #ffb347);
+            background: linear-gradient(135deg, #0066ff, #0044cc);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             margin: 0 auto 16px;
-            font-size: 48px;
-            font-weight: bold;
-            color: white;
-            box-shadow: 0 8px 20px rgba(247, 147, 26, 0.3);
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0, 102, 255, 0.4);
+            border: 2px solid #0066ff;
+        }
+
+        .avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         h1 {
@@ -65,7 +69,7 @@
         }
 
         .handle {
-            color: #f7931a;
+            color: #0066ff;
             font-size: 15px;
             font-weight: 500;
             margin-bottom: 12px;
@@ -86,7 +90,7 @@
             gap: 28px;
             margin-top: 20px;
             padding-top: 16px;
-            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            border-top: 1px solid rgba(0, 102, 255, 0.2);
         }
 
         .stat {
@@ -124,61 +128,63 @@
             font-size: 16px;
             text-decoration: none;
             transition: all 0.2s ease;
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(0, 102, 255, 0.3);
         }
 
         .btn-primary {
-            background: linear-gradient(135deg, #f7931a, #e67e22);
+            background: linear-gradient(135deg, #0066ff, #0044cc);
             color: white;
-            box-shadow: 0 4px 12px rgba(247, 147, 26, 0.25);
+            box-shadow: 0 4px 12px rgba(0, 102, 255, 0.3);
+            border: none;
         }
 
         .btn-primary:hover {
             transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(247, 147, 26, 0.35);
-            background: linear-gradient(135deg, #ffa31a, #f7931a);
+            box-shadow: 0 8px 20px rgba(0, 102, 255, 0.5);
+            background: linear-gradient(135deg, #1177ff, #0055dd);
         }
 
         .btn-discord {
-            background: rgba(88, 101, 242, 0.15);
-            color: #8b9aff;
-            border-color: rgba(88, 101, 242, 0.3);
+            background: rgba(0, 102, 255, 0.1);
+            color: #3b82f6;
+            border-color: rgba(0, 102, 255, 0.4);
         }
 
         .btn-discord:hover {
-            background: rgba(88, 101, 242, 0.25);
+            background: rgba(0, 102, 255, 0.2);
             transform: translateY(-2px);
-            color: #a5b3ff;
+            color: #60a5fa;
         }
 
         .btn-twitter {
-            background: rgba(29, 155, 240, 0.15);
-            color: #60a5fa;
-            border-color: rgba(29, 155, 240, 0.3);
+            background: rgba(0, 102, 255, 0.1);
+            color: #3b82f6;
+            border-color: rgba(0, 102, 255, 0.4);
         }
 
         .btn-twitter:hover {
-            background: rgba(29, 155, 240, 0.25);
+            background: rgba(0, 102, 255, 0.2);
             transform: translateY(-2px);
-            color: #7ab7ff;
+            color: #60a5fa;
         }
 
         .btn-outline {
-            background: rgba(255, 255, 255, 0.05);
+            background: rgba(0, 102, 255, 0.05);
             color: #e5e7eb;
+            border-color: rgba(0, 102, 255, 0.3);
         }
 
         .btn-outline:hover {
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(0, 102, 255, 0.1);
             transform: translateY(-2px);
         }
 
         .email-section {
-            background: rgba(255, 255, 255, 0.03);
+            background: rgba(0, 102, 255, 0.05);
             border-radius: 28px;
             padding: 20px;
             margin-top: 8px;
-            border: 1px solid rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(0, 102, 255, 0.2);
         }
 
         .email-title {
@@ -205,8 +211,8 @@
             flex: 1;
             padding: 14px 16px;
             border-radius: 60px;
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(0, 102, 255, 0.3);
+            background: rgba(0, 0, 0, 0.6);
             color: white;
             font-size: 14px;
             outline: none;
@@ -214,7 +220,7 @@
         }
 
         .email-form input:focus {
-            border-color: #f7931a;
+            border-color: #0066ff;
         }
 
         .email-form input::placeholder {
@@ -225,7 +231,7 @@
             padding: 14px 24px;
             border-radius: 60px;
             border: none;
-            background: #f7931a;
+            background: linear-gradient(135deg, #0066ff, #0044cc);
             color: white;
             font-weight: 600;
             font-size: 14px;
@@ -234,7 +240,7 @@
         }
 
         .email-form button:hover {
-            background: #e67e22;
+            background: linear-gradient(135deg, #1177ff, #0055dd);
             transform: scale(0.98);
         }
 
@@ -264,7 +270,6 @@
             .avatar {
                 width: 80px;
                 height: 80px;
-                font-size: 40px;
             }
             .email-form {
                 flex-direction: column;
@@ -279,7 +284,9 @@
     <div class="container">
         <div class="card">
             <div class="profile">
-                <div class="avatar">🔥</div>
+                <div class="avatar">
+                    <img src="https://i.imgur.com/3Hivcs0.jpg" alt="Top Shabab">
+                </div>
                 <h1>Top Shabab</h1>
                 <div class="handle">@TopShababx</div>
                 <div class="bio">
@@ -303,7 +310,7 @@
             </div>
 
             <div class="links">
-                <a href="https://bingx.com/partner/TopShababx" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+                <a href="https://bingxdao.com/partner/TopShabab" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
                     🔥 Trade on BingX
                     <span>→</span>
                 </a>
